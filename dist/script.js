@@ -4462,14 +4462,14 @@ var burger = function burger(menuSelector, burgerSelector) {
       burgerElem = document.querySelector(burgerSelector);
   menuElem.style.display = 'none';
   burgerElem.addEventListener('click', function () {
-    if (menuElem.style.display == 'none' && window.screen.availWidth < 993) {
+    if (menuElem.style.display == 'none' && window.innerWidth < 993) {
       menuElem.style.display = 'block';
     } else {
       menuElem.style.display = 'none';
     }
   });
   window.addEventListener('resize', function () {
-    if (window.screen.availWidth > 993) {
+    if (window.innerWidth > 992) {
       menuElem.style.display = 'none';
     }
   });
@@ -4921,7 +4921,7 @@ var mask = function mask(selector) {
   };
 
   function createMask(event) {
-    var matrix = '+7 (___) ___ __ __',
+    var matrix = '+38 (___) ___ __ __',
         i = 0,
         def = matrix.replace(/\D/g, ''),
         val = this.value.replace(/\D/g, '');
@@ -5167,51 +5167,7 @@ var scrolling = function scrolling(upSelector) {
         }
       }
     });
-  }); // Pure js scrolling
-  // const element = document.documentElement,
-  //       body = document.body;
-  // const calcScroll = () => {
-  //     upElem.addEventListener('click', function(event) {
-  //         let scrollTop = Math.round(body.scrollTop || element.scrollTop);
-  //         if (this.hash !== '') {
-  //             event.preventDefault();
-  //             let hashElement = document.querySelector(this.hash),
-  //                 hashElementTop = 0;
-  //             while (hashElement.offsetParent) {
-  //                 hashElementTop += hashElement.offsetTop;
-  //                 hashElement = hashElement.offsetParent;
-  //             }
-  //             hashElementTop = Math.round(hashElementTop);
-  //             smoothScroll(scrollTop, hashElementTop, this.hash);
-  //         }
-  //     });
-  // };
-  // const smoothScroll = (from, to, hash) => {
-  //     let timeInterval = 1,
-  //         prevScrollTop,
-  //         speed;
-  //     if (to > from) {
-  //         speed = 30;
-  //     } else {
-  //         speed = -30;
-  //     }
-  //     let move = setInterval(function() {
-  //         let scrollTop = Math.round(body.scrollTop || element.scrollTop);
-  //         if (
-  //             prevScrollTop === scrollTop ||
-  //             (to > from && scrollTop >= to) ||
-  //             (to < from && scrollTop <= to)
-  //         ) {
-  //             clearInterval(move);
-  //             history.replaceState(history.state, document.title, location.href.replace(/#.*$/g, '') + hash);
-  //         } else {
-  //             body.scrollTop += speed;
-  //             element.scrollTop += speed;
-  //             prevScrollTop = scrollTop;
-  //         }
-  //     }, timeInterval);
-  // };
-  // calcScroll();
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (scrolling);
